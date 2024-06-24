@@ -1,8 +1,8 @@
 {
-  "name": "bot",
+  "name": "telegrambot",
   "version": "1.0.0",
-  "description": "Bot for integration of games into Telegram ",
-  "main": "index.js",
+  "description": "Bot for integration of games into Telegram",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/CosmicAlison/TelegramBot.git"
   },
-  "author": "Alison Pariela",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CosmicAlison/TelegramBot/issues"
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/CosmicAlison/TelegramBot#readme",
   "dependencies": {
     "grammy": "^1.25.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.2"
   }
 }
