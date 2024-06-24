@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/CosmicAlison/TelegramBot/issues"
   },
-  "homepage": "https://github.com/CosmicAlison/TelegramBot#readme"
+  "homepage": "https://github.com/CosmicAlison/TelegramBot#readme",
+  "dependencies": {
+    "grammy": "^1.25.1"
+  }
 }
