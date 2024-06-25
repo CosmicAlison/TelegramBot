@@ -8,7 +8,7 @@ declare var process : {
     TEST_BOT_API_KEY: string
   }
 }
-
+require('dotenv').config();
 //Create a new bot
 const bot = new Bot(process.env.TEST_BOT_API_KEY);
 
