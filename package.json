@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/CosmicAlison/TelegramBot#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "grammy": "^1.25.1"
   },
   "devDependencies": {
+    "@types/node": "^20.14.8",
     "typescript": "^5.5.2"
   }
 }

@@ -36,11 +36,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require('dotenv').config();
 var grammy_1 = require("grammy");
 //Store bot screaming status
 var screaming = false;
 //Create a new bot
-var bot = new grammy_1.Bot("6993792250:AAHoW5bM9s0swYM8e3ufgDoUHLvtmZsuCJM");
+var bot = new grammy_1.Bot(process.env.TEST_BOT_API_KEY);
 //This function handles the /scream command
 bot.command("scream", function () {
     screaming = true;

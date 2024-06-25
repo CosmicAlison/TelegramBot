@@ -3,9 +3,14 @@ import { Bot, InlineKeyboard } from "grammy";
 
 //Store bot screaming status
 let screaming = false;
+declare var process : {
+  env: {
+    TEST_BOT_API_KEY: string
+  }
+}
 
 //Create a new bot
-const bot = new Bot("6993792250:AAHoW5bM9s0swYM8e3ufgDoUHLvtmZsuCJM");
+const bot = new Bot(process.env.TEST_BOT_API_KEY);
 
 
 
@@ -34,7 +39,7 @@ const firstMenuMarkup = new InlineKeyboard().text(nextButton, nextButton);
 const secondMenuMarkup = new InlineKeyboard().text(backButton, backButton).text(tutorialButton, "https://core.telegram.org/bots/tutorial");
 
 
-//sends a menu with the inline buttons we pre-assigned above
+//sends a menu with the inline buttons pre-assigned above
 bot.command("menu", async (ctx) => {
   await ctx.reply(firstMenu, {
     parse_mode: "HTML",
