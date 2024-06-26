@@ -7,8 +7,6 @@ require('dotenv').config();
 //Create a new bot
 const bot = new Bot(process.env.TEST_BOT_API_KEY);
 
-
-
 //This function handles the /scream command
 bot.command("scream", () => {
    screaming = true;
@@ -26,12 +24,12 @@ const secondMenu = "<b>Menu 2</b>\n\nThis is menu 2.";
 //Pre-assign button text
 const nextButton = "Next";
 const backButton = "Back";
-const tutorialButton = "Tutorial";
+const tutorialButton = "Tutorials";
 
 //Build keyboards
 const firstMenuMarkup = new InlineKeyboard().text(nextButton, nextButton);
  
-const secondMenuMarkup = new InlineKeyboard().text(backButton, backButton).text(tutorialButton, "https://core.telegram.org/bots/tutorial");
+const secondMenuMarkup = new InlineKeyboard().text(backButton, backButton).text(tutorialButton, "https://core.telegram.org/bots/games");
 
 
 //sends a menu with the inline buttons pre-assigned above
@@ -51,6 +49,14 @@ bot.callbackQuery(backButton, async (ctx) => {
    });
  });
 
+ //handle the /play command and get the next parameter after the slash as requested game
+ //
+ bot.command("play", async (ctx) => {
+  const game = ctx.match; 
+  console.log(`${ctx.from.first_name} would like to play ${game}`);
+  await ctx.reply((`Starting ${game}`)); 
+ });
+
 //Handler processes next button on the menu
 bot.callbackQuery(nextButton, async (ctx) => {
   //Update message content with corresponding menu section
@@ -59,8 +65,7 @@ bot.callbackQuery(nextButton, async (ctx) => {
     parse_mode: "HTML",
    });
  });
-
-
+ 
 //Async handler for messages coming from the Bot API
 bot.on("message", async (ctx) => {
   //Print to console
