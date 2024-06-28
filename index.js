@@ -55,6 +55,7 @@ bot.callbackQuery(backButton, async (ctx) => {
   const game = ctx.match; 
   console.log(`${ctx.from.first_name} would like to play ${game}`);
   await ctx.reply((`Starting ${game}`)); 
+  console.log(`${ctx.from.language_code} is ${ctx.from.first_name}'s language code`);
  });
 
 //Handler processes next button on the menu
